@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip deathClip;
 
 
+
     Animator anim;
     AudioSource enemyAudio;
     CapsuleCollider capsuleCollider;
@@ -47,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
             
         if(currentHealth <= 0)
         {
-            Death ();
+            Death();
         }
     }
 

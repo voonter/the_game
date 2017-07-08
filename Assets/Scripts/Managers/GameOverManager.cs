@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -18,7 +19,13 @@ public class GameOverManager : MonoBehaviour
     {
         if (playerHealth.currentHealth <= 0)
         {
-            anim.SetTrigger("GameOver");
+            StartCoroutine(ScreenFade());
         }
+    }
+
+    IEnumerator ScreenFade()
+    {
+        yield return new WaitForSeconds(1.5F);
+        anim.SetTrigger("GameOver");
     }
 }

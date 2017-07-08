@@ -96,8 +96,11 @@ public class PlayerHealth : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01F);
             mainCamera.transform.Rotate(Vector3.left, 1);
+            mainCamera.transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            mainCamera.transform.Translate(-Vector3.forward * sinkSpeed * Time.deltaTime);
             weapon.transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
         }
+
     }
 
 
