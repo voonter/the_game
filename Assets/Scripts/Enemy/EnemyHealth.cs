@@ -42,7 +42,7 @@ public class EnemyHealth : MonoBehaviour
         if(isDead)
             return;
 
-        enemyAudio.Play ();
+		enemyAudio.Play ();
 
         currentHealth -= amount;
             

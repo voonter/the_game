@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> ();
-        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+		nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
 

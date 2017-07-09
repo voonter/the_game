@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public Image damageImage;
     public AudioClip deathClip;
+	public AudioClip damageClip;
+
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float sinkSpeed = 1.5f;
@@ -36,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if(damaged)
         {
+//			playerAudio.clip = damageClip;
+//			playerAudio.Play ();
             damageImage.color = flashColour;
         }
         else
@@ -72,12 +76,14 @@ public class PlayerHealth : MonoBehaviour
         //playerShooting.DisableEffects ();
    
 
-        //playerAudio.clip = deathClip;
-        //playerAudio.Play ();
+//        playerAudio.clip = deathClip;
+//        playerAudio.Play ();
 
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
         StartCoroutine(AnimateDeath());
+//		SceneManager.LoadScene (0);
+//		AppQuit;
 
     }
 
