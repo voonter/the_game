@@ -96,6 +96,7 @@ public class PlayerHealth : MonoBehaviour
         GameObject weapon = GameObject.FindGameObjectWithTag("Weapon");
         GameObject player = GameObject.FindGameObjectWithTag("PlayerFPS");
 
+        GameObject.Find("Crosshair").GetComponent<Image>().enabled = false;
         mainCamera.GetComponent<MouseLook> ().enabled = false;
         weapon.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<MouseLook>().enabled = false;
