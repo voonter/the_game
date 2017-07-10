@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthSlider.value = currentHealth;
 
-        //playerAudio.Play ();
+        playerAudio.Play ();
 
         if(currentHealth <= 0 && !isDead)
         {
@@ -76,8 +76,8 @@ public class PlayerHealth : MonoBehaviour
         //playerShooting.DisableEffects ();
    
 
-//        playerAudio.clip = deathClip;
-//        playerAudio.Play ();
+        playerAudio.clip = deathClip;
+        playerAudio.Play ();
 
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
@@ -104,7 +104,7 @@ public class PlayerHealth : MonoBehaviour
             mainCamera.transform.Rotate(Vector3.left, 1);
             mainCamera.transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
             mainCamera.transform.Translate(-Vector3.forward * sinkSpeed * Time.deltaTime);
-            weapon.transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            weapon.transform.Translate(-Vector3.up * 2 * sinkSpeed * Time.deltaTime);
         }
 
     }

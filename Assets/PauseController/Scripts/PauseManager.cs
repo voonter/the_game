@@ -55,7 +55,7 @@ public class PauseManager : MonoBehaviour {
 		Debug.Log ("PauseManager.OnUnPause");	
 		isPaused = false;
 
-		foreach (var pausableComponent in pausableInterfaces) {		
+        foreach (var pausableComponent in pausableInterfaces) {		
 			IPausable pausableInterface = (IPausable)pausableComponent;
 			if( pausableInterface != null )
 				pausableInterface.OnUnPause ();
@@ -66,7 +66,7 @@ public class PauseManager : MonoBehaviour {
 		Debug.Log ("PauseManager.OnPause");
 		isPaused = true;
 
-		foreach (var pausableComponent in pausableInterfaces) {		
+        foreach (var pausableComponent in pausableInterfaces) {		
 			IPausable pausableInterface = (IPausable)pausableComponent;
 			if( pausableInterface != null )
 				pausableInterface.OnPause ();

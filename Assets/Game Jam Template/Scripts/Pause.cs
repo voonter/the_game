@@ -11,15 +11,21 @@ public class Pause : MonoBehaviour {
 	private Animator anim;
 	private Component[] pausableInterfaces;
 
-	//Awake is called before Start()
-	void Awake()
+    private GameObject hudCanvas;
+
+        
+  
+    //Awake is called before Start()
+
+    void Awake()
 	{
 		//Get a component reference to ShowPanels attached to this object, store in showPanels variable
 		showPanels = GetComponent<ShowPanels> ();
 		//Get a component reference to StartButton attached to this object, store in startScript variable
 		startScript = GetComponent<StartOptions> ();
 
-	}
+        hudCanvas = GameObject.FindGameObjectWithTag("HUD");
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -47,24 +53,33 @@ public class Pause : MonoBehaviour {
 		//Set time.timescale to 0, this will cause animations and physics to stop updating
 		Time.timeScale = 0;
 
-//		Object[] objects = FindObjectsOfType (typeof(GameObject));
-//		foreach (GameObject go in objects) {
-//			go.SendMessage ("OnPauseGame", SendMessageOptions.DontRequireReceiver);
-//		}DontRequireReceiver
 
-		//call the ShowPausePanel function of the ShowPanels script
+        GameObject player = GameObject.FindGameObjectWithTag("PlayerFPS");
+        GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
+        player.GetComponent<MouseLook>().enabled = false;
+        player.GetComponent<CharacterMotor>().enabled = false;
+        mainCamera.GetComponent<MouseLook>().enabled = false;
 
-//		GetComponent(MouseLook).
+        hudCanvas = GameObject.FindGameObjectWithTag("HUD");
+        hudCanvas.SetActive(false);
 
-		showPanels.ShowPausePanel ();
+        showPanels.ShowPausePanel ();
 	}
 
 
 	public void UnPause()
 	{
-		//Set isPaused to false
-		isPaused = false;
+        GameObject player = GameObject.FindGameObjectWithTag("PlayerFPS");
+        GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        player.GetComponent<MouseLook>().enabled = true;
+        player.GetComponent<CharacterMotor>().enabled = true;
+        mainCamera.GetComponent<MouseLook>().enabled = true;
+        hudCanvas.SetActive(true);
+
+        //Set isPaused to false
+        isPaused = false;
 		//Set time.timescale to 1, this will cause animations and physics to continue updating at regular speed
 		Time.timeScale = 1;
 		//call the HidePausePanel function of the ShowPanels script
