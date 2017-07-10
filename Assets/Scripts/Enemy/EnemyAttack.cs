@@ -51,7 +51,7 @@ public class EnemyAttack : MonoBehaviour
     void Update ()
     {
         playerHealth = player.GetComponent<PlayerHealth>();
-        Debug.Log(playerHealth.currentHealth);
+
         timer += Time.deltaTime;
 
         if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)

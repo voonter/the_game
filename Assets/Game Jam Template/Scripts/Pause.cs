@@ -13,8 +13,9 @@ public class Pause : MonoBehaviour {
 
     private GameObject hudCanvas;
 
-        
-  
+
+
+
     //Awake is called before Start()
 
     void Awake()
@@ -25,6 +26,7 @@ public class Pause : MonoBehaviour {
 		startScript = GetComponent<StartOptions> ();
 
         hudCanvas = GameObject.FindGameObjectWithTag("HUD");
+
     }
 
 	// Update is called once per frame
@@ -70,12 +72,17 @@ public class Pause : MonoBehaviour {
 
 	public void UnPause()
 	{
-        GameObject player = GameObject.FindGameObjectWithTag("PlayerFPS");
+        GameObject playerFPS = GameObject.FindGameObjectWithTag("PlayerFPS");
         GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
 
-        player.GetComponent<MouseLook>().enabled = true;
-        player.GetComponent<CharacterMotor>().enabled = true;
-        mainCamera.GetComponent<MouseLook>().enabled = true;
+        if (!playerHealth.isPlayerDead())
+        {
+            playerFPS.GetComponent<MouseLook>().enabled = true;
+            playerFPS.GetComponent<CharacterMotor>().enabled = true;
+            mainCamera.GetComponent<MouseLook>().enabled = true;
+        }
         hudCanvas.SetActive(true);
 
         //Set isPaused to false

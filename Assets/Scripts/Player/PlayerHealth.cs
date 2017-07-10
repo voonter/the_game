@@ -38,8 +38,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if(damaged)
         {
-//			playerAudio.clip = damageClip;
-//			playerAudio.Play ();
             damageImage.color = flashColour;
         }
         else
@@ -65,6 +63,11 @@ public class PlayerHealth : MonoBehaviour
         {
             Death ();
         }
+    }
+
+    public bool isPlayerDead()
+    {
+        return isDead;
     }
 
 
@@ -104,7 +107,7 @@ public class PlayerHealth : MonoBehaviour
             mainCamera.transform.Rotate(Vector3.left, 1);
             mainCamera.transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
             mainCamera.transform.Translate(-Vector3.forward * sinkSpeed * Time.deltaTime);
-            weapon.transform.Translate(-Vector3.up * 2 * sinkSpeed * Time.deltaTime);
+            weapon.transform.Translate(-Vector3.up * 6 * sinkSpeed * Time.deltaTime);
         }
 
     }
