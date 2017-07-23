@@ -65,6 +65,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+	public void rescue (int amount) {
+		currentHealth += amount;
+		healthSlider.value = currentHealth;
+
+	}
+
     public bool isPlayerDead()
     {
         return isDead;

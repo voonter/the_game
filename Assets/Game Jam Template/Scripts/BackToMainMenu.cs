@@ -26,7 +26,7 @@ public class MainMenuBack : MonoBehaviour {
 
 	public void MainMenu() {
 //		showPanels.HidePausePanel ();
-		SceneManager.UnloadSceneAsync(1);
-		SceneManager.LoadScene (0);
+//		SceneManager.UnloadSceneAsync(1);
+//		SceneManager.LoadScene (0);
 	}
 }
