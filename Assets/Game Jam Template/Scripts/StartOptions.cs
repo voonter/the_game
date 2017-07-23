@@ -24,7 +24,9 @@ public class StartOptions : MonoBehaviour {
 	private float fastFadeIn = .01f;									//Very short fade time (10 milliseconds) to start playing music immediately without a click/glitch
 	private ShowPanels showPanels;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
 
-	
+	private GameObject hudCanvas;
+	private Pause pauseScript;
+
 	void Awake()
 	{
 		//Get a reference to ShowPanels attached to UI object
@@ -32,6 +34,9 @@ public class StartOptions : MonoBehaviour {
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
+
+		pauseScript = GetComponent<Pause> ();
+		hudCanvas = GameObject.FindGameObjectWithTag("HUD");
 	}
 
 
@@ -52,16 +57,19 @@ public class StartOptions : MonoBehaviour {
 
 			//Set the trigger of Animator animColorFade to start transition to the FadeToOpaque state.
 			animColorFade.SetTrigger ("fade");
-			SceneManager.LoadScene (1);
+			pauseScript.start ();
+			SceneManager.LoadScene (1, LoadSceneMode.Additive);
+
+//			Application.LoadLevelAdditiveAsync ("Warehouse sample scene");
 
 		} 
 
 		//If changeScenes is false, call StartGameInScene
-		else 
-		{
+//		else 
+//		{
 			//Call the StartGameInScene function to start game without loading a new scene.
-			StartGameInScene();
-		}
+//			StartGameInScene();
+//		}
 
 	}
 
@@ -96,6 +104,8 @@ public class StartOptions : MonoBehaviour {
 
 		//Load the selected scene, by scene index number in build settings
 		SceneManager.LoadScene (sceneToStart);
+
+//		LoadLevel
 	}
 
 	public void HideDelayed()
@@ -120,6 +130,7 @@ public class StartOptions : MonoBehaviour {
 		animMenuAlpha.SetTrigger ("fade");
 		Invoke("HideDelayed", fadeAlphaAnimationClip.length);
 		Debug.Log ("Game started in same scene! Put your game starting stuff here.");
+
 	}
 
 
