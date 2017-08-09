@@ -87,6 +87,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Jam Template\Scripts\BackToMainMenu.cs" />
     <Compile Include="Assets\Game Jam Template\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Game Jam Template\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Game Jam Template\Scripts\Pause.cs" />
@@ -101,13 +102,18 @@
     <Compile Include="Assets\PauseController\Scripts\PauseManager.cs" />
     <Compile Include="Assets\PauseController\Scripts\TimePause.cs" />
     <Compile Include="Assets\PreStart.cs" />
+    <Compile Include="Assets\ReturnToMainMenu.cs" />
+    <Compile Include="Assets\Scenes\Hydropower_station\Scripts\FreeflightCamera.cs" />
+    <Compile Include="Assets\Scenes\Hydropower_station\Scripts\TextureAnimator.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\HealthManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHealthRescue.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +122,7 @@
     <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
     <None Include="Assets\PauseController\readme.txt" />
+    <None Include="Assets\Scenes\Hydropower_station\readme.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />

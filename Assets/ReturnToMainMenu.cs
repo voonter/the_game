@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ReturnToMainMenu : MonoBehaviour {
 	private ShowPanels showPanels;						//Reference to the ShowPanels script used to hide and show UI panels
 	// Use this for initialization
+	private StartOptions startOptions;
 
 	Animator anim;
 
@@ -23,10 +24,12 @@ public class ReturnToMainMenu : MonoBehaviour {
 		//Get a component reference to ShowPanels attached to this object, store in showPanels variable
 		showPanels = GetComponent<ShowPanels> ();
 		anim = GetComponent<Animator>();
+		startOptions = GetComponent<StartOptions>();
 
 	}
 
 	public void MainMenu() {
+
 
 //		Destroy(this.transform.parent.gameObject);
 //		Destroy(GameObject.Find("EventSystem"));
@@ -45,15 +48,7 @@ public class ReturnToMainMenu : MonoBehaviour {
 //		GameObject.Destroy (SceneManager.GetSceneAt (1);
 //		Application.LoadLevel ("scene");
 
-		SceneManager.UnloadSceneAsync (1);
-
-
-
-	
-
-
-
-
+		SceneManager.UnloadSceneAsync (startOptions.sceneToStart);
 
 		showPanels.HidePausePanel ();
 
