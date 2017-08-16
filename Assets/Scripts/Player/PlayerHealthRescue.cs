@@ -24,8 +24,7 @@ public class PlayerHealthRescue : MonoBehaviour
 //		nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 		audio = GetComponent <AudioSource> ();
-
-		Debug.Log ("test");
+	
 	}
 
 
@@ -37,7 +36,6 @@ public class PlayerHealthRescue : MonoBehaviour
 
 		audio.clip = rescueClip;
 		audio.Play ();
-
 
 		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 	}
