@@ -1,7 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Hydropower_station/main_scene.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scenes/Warehouse environment/Warehouse sample scene.unity
+- path: Assets/Scenes/scene.unity
   isLoaded: 1
   isActive: 1
